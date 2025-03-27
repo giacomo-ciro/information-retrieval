@@ -67,3 +67,21 @@ Surprisingly, none of these methods resulted in a better BLEU score compared to 
 \* using similarity between test prompt and train prompt was found to yield better result than similarity between test prompt and train responses directly.  
 \* Restricting to k=20 candidates ranked by BM-25 did not improve performance. Increasing k just yielded the same result as not using BM25 at all.  
 \* Filtering prompts by language and only matching same-language prompts was found not to influence performance in any direction.
+
+## Usage
+Run the main script to retrieve the responses and compute the BLEU score (add `-D` for debugging messages):
+
+```
+cd ./src/
+python main.py
+```
+
+The file `config.json` is the configuration file used to specify the strategy to be used with its hyperparameters, the track to be solved and whether or not we are in testing setting (generate the final .csv file and do not compute BLEU score)
+
+Additional details on the files available are provided:
+- `logs.json` a history of configurations tested and their BLEU scores (if some entries have missing keys it means they can be set to anything and won't influence the result)
+- `retriever.py` contains the main class with the entire retrieval logic
+- 'utils.py' a few functions used in the main script to compute cosine similarity and BLEU scores
+- `compute_bleus.py` a script to compute all the cross bleus between dev and train set in parallel and save to a `bleus.npy` file (8+ hours on Intel Xeon)
+- `fit_matrix_Q.py` a torch training script to fit the matrix Q as explained in the appendix. It requires the `bleus.npy` file to live in the same directory.
+
