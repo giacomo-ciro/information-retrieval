@@ -1,0 +1,26 @@
+{
+    "test": false,
+
+    "remove_stopwords": false,
+
+    "track": 1,
+    "strategy": "tf-idf-c",
+    "top_k_bm25": 0,
+
+    "min_df": 1,
+    "max_df": 0.75,
+    "w_n_grams": 2,
+    "c_n_grams": 3,
+    
+    "fasttext_pretrained": false,
+    "min_n": 2,
+    "max_n": 5,
+    "min_tf": 1,
+
+    "vector_size": 300,
+    "epochs": 100, 
+    "window": 8,
+    
+    "filter_language": false,
+    "embedding_model": "all-mpnet-base-v2"
+}
