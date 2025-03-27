@@ -1,5 +1,7 @@
 # 🔍📖 Information Retrieval
-An algorithm to retrieve the most appropriate answer to a given prompt, using discrete embeddings (Track 1), continuous static embeddings (Track 2) or any other embedding strategy (Track 3). The performance is measured in terms of the BLEU score (n-grams overlapping) between the retrieved response and the true response.
+An algorithm to retrieve the most appropriate answer to a given prompt, using discrete embeddings (Track 1), continuous static embeddings (Track 2) or any other embedding strategy (Track 3).
+
+The performance is measured in terms of the BLEU score (n-grams overlapping) between the retrieved response and the true response.
 
 ## Methodology
 For all the three tracks, I proceeded in similar ways.
