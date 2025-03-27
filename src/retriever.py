@@ -1,25 +1,21 @@
+import json
 import os
 import re
-import json
 from logging import Logger
 from multiprocessing import cpu_count
 
-from tqdm import tqdm
+import fasttext
 import numpy as np
 import pandas as pd
-from sklearn.decomposition import PCA
-from sklearn.feature_extraction.text import TfidfVectorizer
-
 from gensim.models import Doc2Vec, FastText
 from gensim.models.doc2vec import TaggedDocument
-import fasttext
 from huggingface_hub import hf_hub_download
-
-from rank_bm25 import BM25Okapi
-from sentence_transformers import SentenceTransformer
-
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+from rank_bm25 import BM25Okapi
+from sentence_transformers import SentenceTransformer
+from sklearn.decomposition import PCA
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 from utils import cosine_similarity_matrix
 

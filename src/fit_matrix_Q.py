@@ -13,19 +13,17 @@ The main workflow:
 4. Evaluate performance using BLEU scores
 """
 
-import pandas as pd
-import sys
 import os
 import re
+
 import numpy as np
+import pandas as pd
 import torch
-from torch.utils.data import Dataset, DataLoader
-from tqdm import tqdm
-from functools import partial
-from concurrent.futures import ProcessPoolExecutor
 from nltk.translate.bleu_score import SmoothingFunction, sentence_bleu
-from sklearn.feature_extraction.text import TfidfVectorizer
 from sentence_transformers import SentenceTransformer
+from torch.utils.data import DataLoader, Dataset
+from tqdm import tqdm
+
 from utils import cosine_similarity_matrix
 
 # Configuration parameters
