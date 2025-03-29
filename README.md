@@ -72,7 +72,7 @@ Surprisingly, none of these methods resulted in a better BLEU score compared to 
 Run the main script to retrieve the responses and compute the BLEU score (add `-D` for debugging messages):
 
 ```
-cd ./src/
+cd ./information-retrieval/
 python main.py
 ```
 
